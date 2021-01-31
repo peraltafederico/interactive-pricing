@@ -1,0 +1,115 @@
+@import '../../styles/pallete';
+@import '../../styles/typography';
+
+.pricing-card {
+  min-width: 327px;
+  box-sizing: border-box;
+  flex-direction: column;
+
+  &__description {
+    padding: 34px 11px 38px 11px;
+  }
+
+  &__footer {
+    padding: 24px 77px;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: $light-grayish-blue-alpha;
+  }
+}
+
+.pricing-card-description {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: $fs-xs;
+    text-transform: uppercase;
+    font-weight: $extra-bold;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  &__price-range {
+    margin: 0 13px;
+    margin-bottom: 24px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__price-text {
+    font-size: $fs-lg;
+    font-weight: $extra-bold;
+    color: $dark-desaturated-blue;
+  }
+
+  &__time-text {
+    margin-left: 10px;
+    color: $grayish-blue;
+    font-size: $fs-sm;
+  }
+
+  &__billing {
+    display: flex;
+    justify-content: center;
+    margin-top: 34px;
+  }
+
+  &__billing-text {
+    font-size: $fs-xs;
+  }
+
+  &__switch {
+    margin: 0 12px;
+  }
+
+  &__pill {
+    margin-left: 5px;
+    height: 19px;
+    line-height: 19px;
+    color: $light-red;
+    background-color: $light-grayish;
+    font-weight: $extra-bold;
+    font-size: $fs-xxs;
+    border-radius: 9.5px;
+    width: 100%;
+    max-width: 41px;
+    text-align: center;
+  }
+}
+
+.pricing-card-footer {
+  display: flex;
+  flex-direction: column;
+
+  &__benefits {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+
+  &__benefit {
+    font-size: $fs-xs;
+    color: $grayish-blue;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__icon-check {
+    margin-right: 16.05px;
+  }
+
+  &__button {
+    max-width: 170px;
+  }
+}

@@ -1,13 +1,23 @@
-@import "./styles/pallete.scss";
-@import "./styles/typography.scss";
+@import './styles/pallete.scss';
+@import './styles/typography.scss';
 
 body {
   margin: 0;
   color: $grayish-blue;
   font-family: $sans-serif;
   font-weight: $semi-bold;
+  font-size: $fs-base-mobile;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $very-pale-blue;
+  background-image: url('assets/background.svg');
+  background-repeat: no-repeat;
+  background-position-y: -49px;
+
+  @media only screen and (min-width: 640px) {
+    background-position-y: unset;
+    font-size: $fs-base-desktop;
+  }
 }
 
 h1 {

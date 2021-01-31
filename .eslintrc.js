@@ -1,13 +1,13 @@
 module.exports = {
   extends: [
-    "airbnb-typescript",
-    "airbnb/hooks",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:jest/recommended",
-    "prettier",
-    "prettier/react",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    // "airbnb-typescript",
+    // "airbnb/hooks",
+    // "plugin:@typescript-eslint/recommended",
+    // "plugin:jest/recommended",
+    // "prettier",
+    // "prettier/react",
+    // "prettier/@typescript-eslint",
+    // "plugin:prettier/recommended"
   ],
   plugins: ["react", "@typescript-eslint", "jest"],
   env: {
@@ -37,6 +37,7 @@ module.exports = {
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-wrap-multilines": "off",
     "@typescript-eslint/no-use-before-define": "warn",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off"
   }
 };
