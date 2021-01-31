@@ -1,17 +1,30 @@
 @import '../../styles/pallete';
 @import '../../styles/typography';
+@import '../../styles/breakpoints';
 
 .pricing-card {
   min-width: 327px;
   box-sizing: border-box;
   flex-direction: column;
 
-  &__description {
-    padding: 34px 11px 38px 11px;
+  @media only screen and (min-width: $screen-md) {
+    min-width: 540px;
+  }
+
+  &__content {
+    padding: 34px 0px 38px;
+
+    @media only screen and (min-width: $screen-md) {
+      padding: 40px 0px;
+    }
   }
 
   &__footer {
     padding: 24px 77px;
+
+    @media only screen and (min-width: $screen-md) {
+      padding: 32px 48px 32px 44px;
+    }
   }
 
   &__divider {
@@ -21,9 +34,21 @@
   }
 }
 
-.pricing-card-description {
+.pricing-card-content {
   display: flex;
   flex-direction: column;
+
+  &__description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 48px 0 46px;
+
+    @media only screen and (min-width: $screen-md) {
+      margin-bottom: 24px;
+      justify-content: space-between;
+    }
+  }
 
   &__title {
     font-size: $fs-xs;
@@ -31,11 +56,20 @@
     font-weight: $extra-bold;
     text-align: center;
     margin-bottom: 25px;
+
+    @media only screen and (min-width: $screen-md) {
+      margin-bottom: 0;
+      font-size: $fs-sm;
+    }
   }
 
   &__price-range {
-    margin: 0 13px;
-    margin-bottom: 24px;
+    margin: 0 24px 24px;
+    cursor: pointer;
+
+    @media only screen and (min-width: $screen-md) {
+      margin: 0 48px 0 48px;
+    }
   }
 
   &__price {
@@ -48,18 +82,32 @@
     font-size: $fs-lg;
     font-weight: $extra-bold;
     color: $dark-desaturated-blue;
+
+    @media only screen and (min-width: $screen-md) {
+      font-size: $fs-xl;
+    }
   }
 
   &__time-text {
     margin-left: 10px;
     color: $grayish-blue;
     font-size: $fs-sm;
+
+    @media only screen and (min-width: $screen-md) {
+      font-size: $fs-md;
+    }
   }
 
   &__billing {
     display: flex;
     justify-content: center;
     margin-top: 34px;
+
+    @media only screen and (min-width: $screen-md) {
+      justify-content: stretch;
+      margin-top: 40px;
+      margin-left: 154px;
+    }
   }
 
   &__billing-text {
@@ -68,6 +116,10 @@
 
   &__switch {
     margin: 0 12px;
+
+    @media only screen and (min-width: $screen-md) {
+      margin: 0 16px;
+    }
   }
 
   &__pill {
@@ -82,6 +134,11 @@
     width: 100%;
     max-width: 41px;
     text-align: center;
+
+    @media only screen and (min-width: $screen-md) {
+      margin-left: 9px;
+      max-width: 80px;
+    }
   }
 }
 
@@ -89,10 +146,20 @@
   display: flex;
   flex-direction: column;
 
+  @media only screen and (min-width: $screen-md) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__benefits {
     display: flex;
     flex-direction: column;
     margin-bottom: 32px;
+
+    @media only screen and (min-width: $screen-md) {
+      margin-bottom: 0;
+    }
   }
 
   &__benefit {
@@ -102,6 +169,10 @@
 
     &:not(:last-child) {
       margin-bottom: 10px;
+    }
+
+    @media only screen and (min-width: $screen-md) {
+      text-align: initial;
     }
   }
 

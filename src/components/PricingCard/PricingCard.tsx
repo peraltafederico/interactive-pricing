@@ -5,6 +5,7 @@ import Card from '../Card/Card'
 import Button from '../Button/Button'
 import IconCheck from '../../assets/icon-check.svg'
 import Switch from '../Switch/Switch'
+import useWindowSize from '../../hooks/useWindowSize'
 
 interface Props {
   className?: string
@@ -16,42 +17,48 @@ const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
 
   const handleSwitchChange = () => setSwitchOn(!switchOn)
 
+  const { width } = useWindowSize()
+
+  const isMediumDown = width && width <= 768
+
+  const Price = () => (
+    <div className={s['pricing-card-content__price']}>
+      <span className={s['pricing-card-content__price-text']}>$16.00</span>
+      <span className={s['pricing-card-content__time-text']}>/ month</span>
+    </div>
+  )
+
   return (
     <Card className={cn(s['pricing-card'], className)}>
       <div
-        className={cn(
-          s['pricing-card__description'],
-          s['pricing-card-description']
-        )}
+        className={cn(s['pricing-card__content'], s['pricing-card-content'])}
       >
-        <span className={s['pricing-card-description__title']}>
-          Look Pageviews
-        </span>
+        <div className={s['pricing-card-content__description']}>
+          <span className={s['pricing-card-content__title']}>
+            Look Pageviews
+          </span>
+          {!isMediumDown && <Price />}
+        </div>
         <input
           type="range"
-          className={s['pricing-card-description__price-range']}
+          className={s['pricing-card-content__price-range']}
         ></input>
-        <div className={s['pricing-card-description__price']}>
-          <span className={s['pricing-card-description__price-text']}>
-            $16.00
-          </span>
-          <span className={s['pricing-card-description__time-text']}>
-            / month
-          </span>
-        </div>
-        <div className={s['pricing-card-description__billing']}>
-          <span className={s['pricing-card-description__billing-text']}>
+        {isMediumDown && <Price />}
+        <div className={s['pricing-card-content__billing']}>
+          <span className={s['pricing-card-content__billing-text']}>
             Monthly Billing
           </span>
           <Switch
-            className={s['pricing-card-description__switch']}
+            className={s['pricing-card-content__switch']}
             on={switchOn}
             onChange={handleSwitchChange}
           />
-          <span className={s['pricing-card-description__billing-text']}>
+          <span className={s['pricing-card-content__billing-text']}>
             Yearly Billing
           </span>
-          <div className={s['pricing-card-description__pill']}>-25%</div>
+          <div className={s['pricing-card-content__pill']}>
+            -25% {!isMediumDown && 'discount'}
+          </div>
         </div>
       </div>
       <div className={s['pricing-card__divider']}></div>

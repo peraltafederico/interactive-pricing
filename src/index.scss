@@ -1,5 +1,6 @@
 @import './styles/pallete.scss';
 @import './styles/typography.scss';
+@import './styles/breakpoints.scss';
 
 body {
   margin: 0;
@@ -14,7 +15,7 @@ body {
   background-repeat: no-repeat;
   background-position-y: -49px;
 
-  @media only screen and (min-width: 640px) {
+  @media only screen and (min-width: $screen-md) {
     background-position-y: unset;
     font-size: $fs-base-desktop;
   }
