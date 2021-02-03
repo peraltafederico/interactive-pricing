@@ -12,9 +12,7 @@ const App = () => {
             '100% data ownership ',
             'Email reports',
           ]}
-        >
-          a
-        </PricingCard>
+        ></PricingCard>
       </div>
     </div>
   )

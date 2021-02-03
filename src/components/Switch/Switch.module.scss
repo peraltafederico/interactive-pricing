@@ -12,16 +12,12 @@
     width: 0;
     height: 0;
 
-    &:checked + .switch__slider {
-      background-color: $strong-cyan;
-    }
-
     &:checked + .switch__slider:before {
       transform: translateX(21px);
     }
 
-    &:hover + .switch__slider {
-      background-color: $soft-cyan;
+    &:hover + .switch__slider, &:checked + .switch__slider {
+      background-color: $soft-cyan-beta;
     }
   }
 

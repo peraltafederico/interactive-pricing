@@ -1,0 +1,45 @@
+@import '../../styles/pallete';
+
+.range {
+  -webkit-appearance: none;
+  height: 8px;
+  background: $soft-cyan-alpha;
+  outline: none;
+  border-radius: 5px;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    background-color: $strong-cyan-beta;
+    box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
+    border-radius: 50%;
+    background-image: url('../../assets/icon-slider.svg');
+    background-size: 22px 13px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover {
+      background-color: $soft-cyan-beta;
+    }
+
+    &:active {
+      background-color: $strong-cyan-alpha;
+    }
+  }
+
+  &::-moz-range-progress {
+    background-color: #43e5f7;
+  }
+
+  &::-moz-range-thumb {
+    width: 40px;
+    height: 40px;
+    background: $strong-cyan-beta;
+    box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
+    border-radius: 50%;
+  }
+}

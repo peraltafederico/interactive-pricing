@@ -6,24 +6,37 @@ import Button from '../Button/Button'
 import IconCheck from '../../assets/icon-check.svg'
 import Switch from '../Switch/Switch'
 import useWindowSize from '../../hooks/useWindowSize'
+import InputRange from '../InputRange/InputRange'
+import { PRODUCTS } from '../../constants'
 
 interface Props {
   className?: string
   benefits: string[]
 }
 
-const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
-  const [switchOn, setSwitchOn] = useState(false)
+const DISCOUNT_PERCENTAGE = 0.25
 
-  const handleSwitchChange = () => setSwitchOn(!switchOn)
+const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
+  const [range, setRange] = useState(25)
+  const [discount, setDiscount] = useState(false)
+
+  const handleSwitchChange = () => setDiscount(!discount)
 
   const { width } = useWindowSize()
 
   const isMediumDown = width && width <= 768
 
+  const product = PRODUCTS[range.toString() as '0' | '25' | '50' | '75' | '100']
+
+  const productPrice = discount
+    ? product.price * DISCOUNT_PERCENTAGE
+    : product.price
+
   const Price = () => (
     <div className={s['pricing-card-content__price']}>
-      <span className={s['pricing-card-content__price-text']}>$16.00</span>
+      <span
+        className={s['pricing-card-content__price-text']}
+      >{`$${productPrice}`}</span>
       <span className={s['pricing-card-content__time-text']}>/ month</span>
     </div>
   )
@@ -35,14 +48,15 @@ const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
       >
         <div className={s['pricing-card-content__description']}>
           <span className={s['pricing-card-content__title']}>
-            Look Pageviews
+            {product.name}
           </span>
           {!isMediumDown && <Price />}
         </div>
-        <input
-          type="range"
+        <InputRange
           className={s['pricing-card-content__price-range']}
-        ></input>
+          value={range}
+          onChange={(e) => setRange(parseInt(e.target.value))}
+        />
         {isMediumDown && <Price />}
         <div className={s['pricing-card-content__billing']}>
           <span className={s['pricing-card-content__billing-text']}>
@@ -50,7 +64,7 @@ const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
           </span>
           <Switch
             className={s['pricing-card-content__switch']}
-            on={switchOn}
+            on={discount}
             onChange={handleSwitchChange}
           />
           <span className={s['pricing-card-content__billing-text']}>
