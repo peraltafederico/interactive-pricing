@@ -1,6 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
-import styles from './Card.module.scss'
+import s from './Card.module.scss'
 
 interface Props {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({ children, className }: Props) => {
-  return <div className={cn(styles.card, className)}>{children}</div>
+  return <div className={cn(s.card, className)}>{children}</div>
 }
 
 export default Card

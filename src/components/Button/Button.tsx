@@ -1,6 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
-import styles from './Button.module.scss'
+import s from './Button.module.scss'
 
 interface Props
   extends React.DetailedHTMLProps<
@@ -13,7 +13,7 @@ interface Props
 
 const Button: React.FC<Props> = ({ children, className, ...props }: Props) => {
   return (
-    <button className={cn(styles.button, className)} {...props}>
+    <button className={cn(s.button, className)} {...props}>
       {children}
     </button>
   )
