@@ -1,18 +1,56 @@
 @import './styles/pallete.scss';
+@import './styles/breakpoints.scss';
 
 .app {
   display: flex;
   height: 100vh;
-  align-items: center;
-}
+  flex-direction: column;
 
-.app__card {
-  margin: auto;
-  display: flex;
-}
+  &__title-container {
+    margin: 104px auto 92px;
+    text-align: center;
+    position: relative;
 
-.asd {
-  width: 30px;
-  height: 30px;
-  box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
+    &:before {
+      content: '';
+      height: 145px;
+      width: 100%;
+      background-image: url('assets/pattern-circles.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      left: 0;
+      transform: translate(1px, -32px);
+      z-index: -1;
+
+      @media only screen and (min-width: $screen-md) {
+        transform: translateY(-37px);
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $dark-desaturated-blue;
+    line-height: 27px;
+  }
+
+  &__description {
+    color: $grayish-blue;
+    line-height: 23px;
+    margin: 0;
+
+    &:first-of-type {
+      margin: 8px 0 0 0;
+    }
+
+    @media only screen and (min-width: $screen-md) {
+      margin: 12px 0 0 0;
+    }
+  }
+
+  &__card {
+    margin: 0 auto;
+    display: flex;
+  }
 }
