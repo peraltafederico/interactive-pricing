@@ -17,7 +17,7 @@ interface Props {
 const DISCOUNT_PERCENTAGE = 0.25
 
 const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
-  const [range, setRange] = useState(25)
+  const [range, setRange] = useState(50)
   const [discount, setDiscount] = useState(false)
 
   const handleSwitchChange = () => setDiscount(!discount)
