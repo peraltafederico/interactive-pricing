@@ -6,9 +6,11 @@
   min-width: 327px;
   box-sizing: border-box;
   flex-direction: column;
+  margin-bottom: 88px;
 
   @media only screen and (min-width: $screen-md) {
     min-width: 540px;
+    margin-bottom: 0;
   }
 
   &__content {
@@ -20,10 +22,11 @@
   }
 
   &__footer {
-    padding: 24px 77px;
+    padding: 24px 77px 32px;
 
     @media only screen and (min-width: $screen-md) {
-      padding: 32px 48px 32px 44px;
+      padding: 0 48px 0 44px;
+      height: 135px;
     }
   }
 
@@ -45,7 +48,7 @@
     margin: 0 48px 0 46px;
 
     @media only screen and (min-width: $screen-md) {
-      margin-bottom: 24px;
+      margin-bottom: 40px;
       justify-content: space-between;
     }
   }
@@ -55,16 +58,20 @@
     text-transform: uppercase;
     font-weight: $extra-bold;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 41px;
+    line-height: 16px;
+    letter-spacing: 1.71429px;
 
     @media only screen and (min-width: $screen-md) {
+      line-height: 19px;
       margin-bottom: 0;
       font-size: $fs-sm;
+      letter-spacing: 2px;
     }
   }
 
   &__price-range {
-    margin: 0 24px 24px;
+    margin: 0 24px 40px;
     cursor: pointer;
 
     @media only screen and (min-width: $screen-md) {
@@ -82,9 +89,13 @@
     font-size: $fs-lg;
     font-weight: $extra-bold;
     color: $dark-desaturated-blue;
+    line-height: 44px;
+    letter-spacing: -0.8px;
 
     @media only screen and (min-width: $screen-md) {
       font-size: $fs-xl;
+      line-height: 55px;
+      letter-spacing: -1px;
     }
   }
 
@@ -92,9 +103,11 @@
     margin-left: 10px;
     color: $grayish-blue;
     font-size: $fs-sm;
+    line-height: 19px;
 
     @media only screen and (min-width: $screen-md) {
       font-size: $fs-md;
+      line-height: 22px;
     }
   }
 
@@ -102,16 +115,18 @@
     display: flex;
     justify-content: center;
     margin-top: 34px;
+    align-items: center;
 
     @media only screen and (min-width: $screen-md) {
       justify-content: stretch;
-      margin-top: 40px;
+      margin-top: 56px;
       margin-left: 154px;
     }
   }
 
   &__billing-text {
     font-size: $fs-xs;
+    line-height: 16px;
   }
 
   &__switch {
@@ -166,6 +181,7 @@
     font-size: $fs-xs;
     color: $grayish-blue;
     text-align: center;
+    line-height: 17px;
 
     &:not(:last-child) {
       margin-bottom: 10px;
@@ -182,5 +198,6 @@
 
   &__button {
     max-width: 170px;
+    line-height: 16px;
   }
 }

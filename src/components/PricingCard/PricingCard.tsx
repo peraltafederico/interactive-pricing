@@ -36,7 +36,7 @@ const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
     <div className={s['pricing-card-content__price']}>
       <span
         className={s['pricing-card-content__price-text']}
-      >{`$${productPrice}`}</span>
+      >{`$${productPrice.toFixed(2)}`}</span>
       <span className={s['pricing-card-content__time-text']}>/ month</span>
     </div>
   )
