@@ -53,6 +53,7 @@ const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
           {!isMediumDown && <Price />}
         </div>
         <InputRange
+          name="price"
           className={s['pricing-card-content__price-range']}
           value={range}
           onChange={(e) => setRange(parseInt(e.target.value))}
@@ -83,7 +84,8 @@ const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
               <img
                 className={s['pricing-card-footer__icon-check']}
                 src={IconCheck}
-              ></img>{' '}
+                alt="icon-check"
+              />
               {benefit}
             </span>
           ))}

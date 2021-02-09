@@ -8,6 +8,7 @@ interface Props {
   max?: number
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   value: number
+  name: string
 }
 
 const InputRange = ({
@@ -16,6 +17,7 @@ const InputRange = ({
   min = 1,
   max = 100,
   value = 100,
+  name
 }: Props) => {
   const ref = useRef<HTMLInputElement>(null)
 
@@ -28,6 +30,7 @@ const InputRange = ({
   return (
     <input
       ref={ref}
+      name={name}
       type="range"
       className={cn(s.range, className)}
       onChange={onChange}
