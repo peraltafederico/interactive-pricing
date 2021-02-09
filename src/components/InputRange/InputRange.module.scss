@@ -31,6 +31,12 @@
     }
   }
 
+  &:focus {
+    &::-webkit-slider-thumb {
+      background-color: $soft-cyan-beta;
+    }
+  }
+
   &::-moz-range-progress {
     background-color: #43e5f7;
   }

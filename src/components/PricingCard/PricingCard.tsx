@@ -53,7 +53,7 @@ const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
           {!isMediumDown && <Price />}
         </div>
         <InputRange
-          name="price"
+          id="price-range"
           className={s['pricing-card-content__price-range']}
           value={range}
           onChange={(e) => setRange(parseInt(e.target.value))}
