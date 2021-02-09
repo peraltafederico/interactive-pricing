@@ -9,14 +9,14 @@
 
   input {
     opacity: 0;
-    width: 0;
-    height: 0;
+    width: 100%;
 
     &:checked + .switch__slider:before {
       transform: translateX(21px);
     }
 
-    &:hover + .switch__slider, &:checked + .switch__slider {
+    &:hover + .switch__slider,
+    &:focus + .switch__slider {
       background-color: $soft-cyan-beta;
     }
   }
