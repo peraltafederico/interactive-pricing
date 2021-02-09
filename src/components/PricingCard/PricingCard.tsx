@@ -29,7 +29,7 @@ const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
   const product = PRODUCTS[range.toString() as '0' | '25' | '50' | '75' | '100']
 
   const productPrice = discount
-    ? product.price * DISCOUNT_PERCENTAGE
+    ? product.price - product.price * DISCOUNT_PERCENTAGE
     : product.price
 
   const Price = () => (
