@@ -106,6 +106,7 @@
     line-height: 19px;
 
     @media only screen and (min-width: $screen-md) {
+      margin-left: 8px;
       font-size: $fs-md;
       line-height: 22px;
     }
@@ -119,6 +120,7 @@
 
     @media only screen and (min-width: $screen-md) {
       justify-content: stretch;
+      align-items: stretch;
       margin-top: 56px;
       margin-left: 154px;
     }
@@ -147,7 +149,7 @@
     font-size: $fs-xxs;
     border-radius: 9.5px;
     width: 100%;
-    max-width: 41px;
+    max-width: 42px;
     text-align: center;
 
     @media only screen and (min-width: $screen-md) {
