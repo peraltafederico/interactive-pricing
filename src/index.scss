@@ -16,7 +16,7 @@ body {
   background-position-y: -49px;
 
   @media only screen and (min-width: $screen-md) {
-    background-position-y: unset;
+    background-position: center top;
     font-size: $fs-base-desktop;
   }
 }
