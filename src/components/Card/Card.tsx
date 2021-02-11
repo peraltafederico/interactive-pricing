@@ -3,7 +3,7 @@ import cn from 'classnames'
 import s from './Card.module.scss'
 
 interface Props {
-  children: React.ReactNode;
+  children: React.ReactNode
   className?: string
 }
 

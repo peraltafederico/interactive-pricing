@@ -56,7 +56,7 @@ const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
           id="price-range"
           className={s['pricing-card-content__price-range']}
           value={range}
-          onChange={(e) => setRange(parseInt(e.target.value))}
+          onChange={(e) => setRange(parseInt(e.target.value, 10))}
         />
         {isMediumDown && <Price />}
         <div className={s['pricing-card-content__billing']}>
@@ -67,6 +67,7 @@ const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
             className={s['pricing-card-content__switch']}
             on={discount}
             onChange={handleSwitchChange}
+            id="switch-discount"
           />
           <span className={s['pricing-card-content__billing-text']}>
             Yearly Billing
@@ -76,7 +77,7 @@ const PricingCard: React.FC<Props> = ({ className, benefits }: Props) => {
           </div>
         </div>
       </div>
-      <div className={s['pricing-card__divider']}></div>
+      <div className={s['pricing-card__divider']} />
       <div className={cn(s['pricing-card__footer'], s['pricing-card-footer'])}>
         <div className={s['pricing-card-footer__benefits']}>
           {benefits.map((benefit) => (

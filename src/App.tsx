@@ -18,9 +18,7 @@ const App = () => {
         )}
         {isMediumDown ? (
           <>
-            <p className={s.app__description}>
-              Sign-up for our 30-day trial.
-            </p>
+            <p className={s.app__description}>Sign-up for our 30-day trial.</p>
             <p className={s.app__description}>No credit card required.</p>
           </>
         ) : (
@@ -36,7 +34,7 @@ const App = () => {
             '100% data ownership ',
             'Email reports',
           ]}
-        ></PricingCard>
+        />
       </div>
     </div>
   )

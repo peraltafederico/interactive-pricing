@@ -13,7 +13,7 @@ interface Props
 
 const Button: React.FC<Props> = ({ children, className, ...props }: Props) => {
   return (
-    <button className={cn(s.button, className)} {...props}>
+    <button type="button" className={cn(s.button, className)} {...props}>
       {children}
     </button>
   )

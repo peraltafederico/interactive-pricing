@@ -1,6 +1,6 @@
-import s from './InputRange.module.scss'
 import cn from 'classnames'
 import { useEffect, useRef } from 'react'
+import s from './InputRange.module.scss'
 
 interface Props {
   className?: string
@@ -29,18 +29,19 @@ const InputRange = ({
 
   return (
     <>
-      <label htmlFor={id}></label>
-      <input
-        ref={ref}
-        id={id}
-        type="range"
-        className={cn(s.range, className)}
-        onChange={onChange}
-        value={value}
-        max="100"
-        min="0"
-        step="25"
-      />
+      <label htmlFor={id}>
+        <input
+          ref={ref}
+          id={id}
+          type="range"
+          className={cn(s.range, className)}
+          onChange={onChange}
+          value={value}
+          max="100"
+          min="0"
+          step="25"
+        />
+      </label>
     </>
   )
 }
