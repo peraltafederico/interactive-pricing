@@ -1,8 +1,8 @@
 module.exports = {
   extends: [
-    "airbnb",
-    "airbnb-typescript",
-    "airbnb/hooks",
+    'airbnb',
+    'airbnb-typescript',
+    'airbnb/hooks',
     'prettier',
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
@@ -38,5 +38,11 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'warn',
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
+    'jsx-a11y/label-has-associated-control': [
+      'error',
+      {
+        labelAttributes: ['htmlFor'],
+      },
+    ],
   },
 }

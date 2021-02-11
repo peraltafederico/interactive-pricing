@@ -29,19 +29,18 @@ const InputRange = ({
 
   return (
     <>
-      <label htmlFor={id}>
-        <input
-          ref={ref}
-          id={id}
-          type="range"
-          className={cn(s.range, className)}
-          onChange={onChange}
-          value={value}
-          max="100"
-          min="0"
-          step="25"
-        />
-      </label>
+      <label htmlFor={id} />
+      <input
+        ref={ref}
+        id={id}
+        type="range"
+        className={cn(s.range, className)}
+        onChange={onChange}
+        value={value}
+        max="100"
+        min="0"
+        step="25"
+      />
     </>
   )
 }
